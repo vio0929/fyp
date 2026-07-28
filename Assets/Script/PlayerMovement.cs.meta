@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 94084cfb64ff82544a76fba5be9e4416
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - idleDown: {fileID: 2534157357222269027, guid: ea6b2e8901c6d9942a5e4d20160f8780, type: 3}
+  - idleUp: {fileID: -4560889361705502254, guid: ea6b2e8901c6d9942a5e4d20160f8780, type: 3}
+  - idleSide: {fileID: -344633899238766996, guid: ea6b2e8901c6d9942a5e4d20160f8780, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
