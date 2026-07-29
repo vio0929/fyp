@@ -1,0 +1,581 @@
+fileFormatVersion: 2
+guid: a04c40ca49936bb4eb8c654d07a82426
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2760281195743950426
+    second: Room_Furniture 1_0
+  - first:
+      213: -3703708742728714546
+    second: Room_Furniture 1_1
+  - first:
+      213: -9032378496555209626
+    second: Room_Furniture 1_2
+  - first:
+      213: 5541495058371053434
+    second: Room_Furniture 1_3
+  - first:
+      213: -5101129734842119491
+    second: Room_Furniture 1_4
+  - first:
+      213: -2640735505043439344
+    second: Room_Furniture 1_5
+  - first:
+      213: 6967016392462147937
+    second: Room_Furniture 1_6
+  - first:
+      213: 2158077662850114667
+    second: Room_Furniture 1_7
+  - first:
+      213: 318843061349629631
+    second: Room_Furniture 1_8
+  - first:
+      213: 7240204106175754186
+    second: Room_Furniture 1_9
+  - first:
+      213: 2733243023282197158
+    second: Room_Furniture 1_10
+  - first:
+      213: 2772734201919922463
+    second: Room_Furniture 1_11
+  - first:
+      213: 7885744577638259975
+    second: Room_Furniture 1_12
+  - first:
+      213: -8085088501952825597
+    second: Room_Furniture 1_13
+  - first:
+      213: 7997342793563360778
+    second: Room_Furniture 1_14
+  - first:
+      213: 1254969602140494067
+    second: Room_Furniture 1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Room_Furniture 1_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 331
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9cd7780e281b9d0800000000000000
+      internalID: -2760281195743950426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 343
+        width: 52
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec675268588c99cc0800000000000000
+      internalID: -3703708742728714546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 347
+        width: 38
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c23fbec9b86a280800000000000000
+      internalID: -9032378496555209626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 322
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a770ace356857ec40800000000000000
+      internalID: 5541495058371053434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 274
+        width: 58
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba8d8978852539b0800000000000000
+      internalID: -5101129734842119491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 309
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011cf14ac093a5bd0800000000000000
+      internalID: -2640735505043439344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_6
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 310
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161a7010f70dfa060800000000000000
+      internalID: 6967016392462147937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_7
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 301
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64e2eb433803fd10800000000000000
+      internalID: 2158077662850114667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 302
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbeb7d23312cc6400800000000000000
+      internalID: 318843061349629631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 232
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf2ee9364f5a7460800000000000000
+      internalID: 7240204106175754186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_10
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 279
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2dc8f5c0e6ee520800000000000000
+      internalID: 2733243023282197158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_11
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 255
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11630ae01bba7620800000000000000
+      internalID: 2772734201919922463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_12
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 271
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d5793b9eacf6d60800000000000000
+      internalID: 7885744577638259975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_13
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 272
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 307b18718defbcf80800000000000000
+      internalID: -8085088501952825597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 235
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0ecf5526e44cfe60800000000000000
+      internalID: 7997342793563360778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 200
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f85f7b343c8a6110800000000000000
+      internalID: 1254969602140494067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_16
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 299
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 2, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3b05ce8d8364c4b85d81f37b182dbd
+      internalID: 1964034565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_17
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 270
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917bc32b70244ff4fba3c2072713557f
+      internalID: -642060077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d7af17b375c76f943a16dfb757f6daf1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Room_Furniture 1_0: -2760281195743950426
+      Room_Furniture 1_1: -3703708742728714546
+      Room_Furniture 1_10: 2733243023282197158
+      Room_Furniture 1_11: 2772734201919922463
+      Room_Furniture 1_12: 7885744577638259975
+      Room_Furniture 1_13: -8085088501952825597
+      Room_Furniture 1_14: 7997342793563360778
+      Room_Furniture 1_15: 1254969602140494067
+      Room_Furniture 1_16: 1964034565
+      Room_Furniture 1_17: -642060077
+      Room_Furniture 1_2: -9032378496555209626
+      Room_Furniture 1_3: 5541495058371053434
+      Room_Furniture 1_4: -5101129734842119491
+      Room_Furniture 1_5: -2640735505043439344
+      Room_Furniture 1_6: 6967016392462147937
+      Room_Furniture 1_7: 2158077662850114667
+      Room_Furniture 1_8: 318843061349629631
+      Room_Furniture 1_9: 7240204106175754186
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
