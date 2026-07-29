@@ -13,13 +13,13 @@ public class Interactable : MonoBehaviour
     [Header("Dialogue")]
 
     [TextArea(3, 5)]
-    public string dialogue;
+    public string[] dialogues;
 
     public virtual void Interact()
     {
         if (!canInteract)
             return;
 
-        DialogueManager.Instance.ShowDialogue(dialogue);
+        DialogueManager.Instance.ShowDialogue(dialogues);
     }
 }

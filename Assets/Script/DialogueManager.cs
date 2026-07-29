@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class DialogueManager : MonoBehaviour
     [Header("UI")]
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
+    public TMP_Text continueText;   // [Space] Continue
+
+    private Queue<string> dialogueQueue = new Queue<string>();
 
     private bool isDialogueOpen = false;
 
@@ -24,6 +28,11 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialoguePanel.SetActive(false);
+
+        if (continueText != null)
+        {
+            continueText.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -31,25 +40,66 @@ public class DialogueManager : MonoBehaviour
         if (isDialogueOpen &&
             Input.GetKeyDown(KeyCode.Space))
         {
-            HideDialogue();
+            DisplayNextSentence();
         }
     }
 
-    public void ShowDialogue(string message)
+    //==============================
+    // Start Dialogue
+    //==============================
+    public void ShowDialogue(string[] sentences)
     {
+        dialogueQueue.Clear();
+
+        foreach (string sentence in sentences)
+        {
+            dialogueQueue.Enqueue(sentence);
+        }
+
         dialoguePanel.SetActive(true);
-        dialogueText.text = message;
+
+        if (continueText != null)
+        {
+            continueText.gameObject.SetActive(true);
+        }
 
         isDialogueOpen = true;
+
+        DisplayNextSentence();
     }
 
+    //==============================
+    // Next Sentence
+    //==============================
+    private void DisplayNextSentence()
+    {
+        if (dialogueQueue.Count == 0)
+        {
+            HideDialogue();
+            return;
+        }
+
+        dialogueText.text = dialogueQueue.Dequeue();
+    }
+
+    //==============================
+    // Close Dialogue
+    //==============================
     public void HideDialogue()
     {
         dialoguePanel.SetActive(false);
 
+        if (continueText != null)
+        {
+            continueText.gameObject.SetActive(false);
+        }
+
         isDialogueOpen = false;
     }
 
+    //==============================
+    // Check Dialogue State
+    //==============================
     public bool IsDialogueOpen()
     {
         return isDialogueOpen;
