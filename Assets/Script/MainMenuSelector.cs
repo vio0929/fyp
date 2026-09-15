@@ -48,7 +48,16 @@ public class MainMenuSelector : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("GameScene");
+        MainMenu mainMenu = GetComponent<MainMenu>();
+
+        if (mainMenu != null)
+        {
+            mainMenu.PlayGame();
+        }
+        else
+        {
+            Debug.LogWarning("MainMenu component not found!");
+        }
     }
 
     public void QuitGame()

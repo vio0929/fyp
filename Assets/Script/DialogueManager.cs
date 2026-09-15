@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,11 +10,14 @@ public class DialogueManager : MonoBehaviour
     [Header("UI")]
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
-    public TMP_Text continueText;   // [Space] Continue
+    public TMP_Text continueText;
 
     private Queue<string> dialogueQueue = new Queue<string>();
 
     private bool isDialogueOpen = false;
+
+    // Dialogue finished callback
+    private Action onDialogueFinished;
 
     private void Awake()
     {
@@ -44,10 +48,20 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    //==============================
-    // Start Dialogue
-    //==============================
+    // =========================================================
+    // Normal Dialogue
+    // =========================================================
     public void ShowDialogue(string[] sentences)
+    {
+        ShowDialogue(sentences, null);
+    }
+
+    // =========================================================
+    // Dialogue with callback
+    // =========================================================
+    public void ShowDialogue(
+        string[] sentences,
+        Action finishedAction)
     {
         dialogueQueue.Clear();
 
@@ -55,6 +69,8 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueQueue.Enqueue(sentence);
         }
+
+        onDialogueFinished = finishedAction;
 
         dialoguePanel.SetActive(true);
 
@@ -68,23 +84,30 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    //==============================
+    // =========================================================
     // Next Sentence
-    //==============================
+    // =========================================================
     private void DisplayNextSentence()
     {
         if (dialogueQueue.Count == 0)
         {
             HideDialogue();
+
+            // Save callback before clearing
+            Action finishedAction = onDialogueFinished;
+            onDialogueFinished = null;
+
+            finishedAction?.Invoke();
+
             return;
         }
 
         dialogueText.text = dialogueQueue.Dequeue();
     }
 
-    //==============================
+    // =========================================================
     // Close Dialogue
-    //==============================
+    // =========================================================
     public void HideDialogue()
     {
         dialoguePanel.SetActive(false);
@@ -97,9 +120,9 @@ public class DialogueManager : MonoBehaviour
         isDialogueOpen = false;
     }
 
-    //==============================
+    // =========================================================
     // Check Dialogue State
-    //==============================
+    // =========================================================
     public bool IsDialogueOpen()
     {
         return isDialogueOpen;

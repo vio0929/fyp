@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: a2cf1c1eeac8f7c4dafca1afafe26f78
+guid: a34229babf3480948a1f68378d120498
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -450376430400614745
-    second: Evelyn_0
+      213: 6133291122410881743
+    second: wall picture_0
   - first:
-      213: -344633899238766996
-    second: Evelyn_1
+      213: 5782156634100735363
+    second: wall picture_1
   - first:
-      213: -7535091313463424705
-    second: Evelyn_2
-  - first:
-      213: 3184610499234291403
-    second: Evelyn_3
-  - first:
-      213: 2534157357222269027
-    second: Evelyn_4
-  - first:
-      213: -8637498002154913394
-    second: Evelyn_5
-  - first:
-      213: -4560889361705502254
-    second: Evelyn_6
+      213: -6903694605017662789
+    second: wall picture_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +54,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -92,8 +80,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 2
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Evelyn_0
+      name: wall picture_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 7
-        width: 44
-        height: 79
+        x: 77
+        y: 14
+        width: 687
+        height: 700
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ae43c2d501ffb9f0800000000000000
-      internalID: -450376430400614745
+      spriteID: fc28b5fb7c3dd1550800000000000000
+      internalID: 6133291122410881743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_1
+      name: wall picture_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 6
-        width: 41
-        height: 80
+        x: 863
+        y: 17
+        width: 652
+        height: 694
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c66c05a6b4d973bf0800000000000000
-      internalID: -344633899238766996
+      spriteID: 38d1e33d2d85e3050800000000000000
+      internalID: 5782156634100735363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_2
+      name: wall picture_2
       rect:
         serializedVersion: 2
-        x: 119
-        y: 7
-        width: 41
-        height: 79
+        x: 1607
+        y: 21
+        width: 534
+        height: 615
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,96 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f3981ee7f5afd6790800000000000000
-      internalID: -7535091313463424705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_3
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 7
-        width: 41
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bced6d25062023c20800000000000000
-      internalID: 3184610499234291403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_4
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 6
-        width: 41
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3601d2a90b22b2320800000000000000
-      internalID: 2534157357222269027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_5
-      rect:
-        serializedVersion: 2
-        x: 267
-        y: 7
-        width: 44
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8109699451712880800000000000000
-      internalID: -8637498002154913394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_6
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 7
-        width: 35
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d97fa74a4774b0c0800000000000000
-      internalID: -4560889361705502254
+      spriteID: bba342685562130a0800000000000000
+      internalID: -6903694605017662789
       vertices: []
       indices: 
       edges: []
@@ -285,13 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Evelyn_0: -450376430400614745
-      Evelyn_1: -344633899238766996
-      Evelyn_2: -7535091313463424705
-      Evelyn_3: 3184610499234291403
-      Evelyn_4: 2534157357222269027
-      Evelyn_5: -8637498002154913394
-      Evelyn_6: -4560889361705502254
+      wall picture_0: 6133291122410881743
+      wall picture_1: 5782156634100735363
+      wall picture_2: -6903694605017662789
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

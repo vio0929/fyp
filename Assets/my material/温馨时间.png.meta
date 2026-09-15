@@ -1,28 +1,10 @@
 fileFormatVersion: 2
-guid: a2cf1c1eeac8f7c4dafca1afafe26f78
+guid: 940994bfc2ff6ef4cb1e29a6f3439a50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -450376430400614745
-    second: Evelyn_0
-  - first:
-      213: -344633899238766996
-    second: Evelyn_1
-  - first:
-      213: -7535091313463424705
-    second: Evelyn_2
-  - first:
-      213: 3184610499234291403
-    second: Evelyn_3
-  - first:
-      213: 2534157357222269027
-    second: Evelyn_4
-  - first:
-      213: -8637498002154913394
-    second: Evelyn_5
-  - first:
-      213: -4560889361705502254
-    second: Evelyn_6
+      213: -4215248698715248153
+    second: "\u6E29\u99A8\u65F6\u95F4_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -93,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,155 +100,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Evelyn_0
+      name: Evelyn_Lucia
       rect:
         serializedVersion: 2
-        x: 12
-        y: 7
-        width: 44
-        height: 79
+        x: 127
+        y: 863
+        width: 458
+        height: 378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ae43c2d501ffb9f0800000000000000
-      internalID: -450376430400614745
+      spriteID: 7e9662154ad6085c0800000000000000
+      internalID: -4215248698715248153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_1
+      name: At_The_Park
       rect:
         serializedVersion: 2
-        x: 67
-        y: 6
-        width: 41
-        height: 80
+        x: 668
+        y: 862
+        width: 458
+        height: 378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c66c05a6b4d973bf0800000000000000
-      internalID: -344633899238766996
+      spriteID: 501fb82a9eaaded40a89f62512138995
+      internalID: -513879639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_2
+      name: Lucia_Birthday
       rect:
         serializedVersion: 2
-        x: 119
-        y: 7
-        width: 41
-        height: 79
+        x: 127
+        y: 465
+        width: 458
+        height: 372
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f3981ee7f5afd6790800000000000000
-      internalID: -7535091313463424705
+      spriteID: ffb1aa83e885322498268f562afa264c
+      internalID: 1933925682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_3
+      name: Homework_Together
       rect:
         serializedVersion: 2
-        x: 163
-        y: 7
-        width: 41
-        height: 79
+        x: 665
+        y: 464
+        width: 458
+        height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bced6d25062023c20800000000000000
-      internalID: 3184610499234291403
+      spriteID: 1d67af2f70db01940ab95a450f0ab412
+      internalID: -1351428166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_4
+      name: Good_Night
       rect:
         serializedVersion: 2
-        x: 215
-        y: 6
-        width: 41
-        height: 80
+        x: 128
+        y: 51
+        width: 458
+        height: 381
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3601d2a90b22b2320800000000000000
-      internalID: 2534157357222269027
+      spriteID: cee9da24e2b85dd46819954a96eefe63
+      internalID: 1250414165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_5
+      name: Someday_Again
       rect:
         serializedVersion: 2
-        x: 267
-        y: 7
-        width: 44
-        height: 79
+        x: 665
+        y: 52
+        width: 458
+        height: 380
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e8109699451712880800000000000000
-      internalID: -8637498002154913394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_6
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 7
-        width: 35
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d97fa74a4774b0c0800000000000000
-      internalID: -4560889361705502254
+      spriteID: dfeac91b1e8c76b48b8250186bd245b9
+      internalID: -987660330
       vertices: []
       indices: 
       edges: []
@@ -275,7 +235,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ae3bf4510aad6204381802c5fdaea679
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +245,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Evelyn_0: -450376430400614745
-      Evelyn_1: -344633899238766996
-      Evelyn_2: -7535091313463424705
-      Evelyn_3: 3184610499234291403
-      Evelyn_4: 2534157357222269027
-      Evelyn_5: -8637498002154913394
-      Evelyn_6: -4560889361705502254
+      At_The_Park: -513879639
+      Evelyn_Lucia: -4215248698715248153
+      Good_Night: 1250414165
+      Homework_Together: -1351428166
+      Lucia_Birthday: 1933925682
+      Someday_Again: -987660330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

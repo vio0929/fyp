@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: a2cf1c1eeac8f7c4dafca1afafe26f78
+guid: 35037fddc6103be45bc1ec34cfc9e003
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -450376430400614745
-    second: Evelyn_0
+      213: 3987999003584520046
+    second: inventory slot_0
   - first:
-      213: -344633899238766996
-    second: Evelyn_1
+      213: 2570050622210062215
+    second: inventory slot_1
   - first:
-      213: -7535091313463424705
-    second: Evelyn_2
-  - first:
-      213: 3184610499234291403
-    second: Evelyn_3
-  - first:
-      213: 2534157357222269027
-    second: Evelyn_4
-  - first:
-      213: -8637498002154913394
-    second: Evelyn_5
-  - first:
-      213: -4560889361705502254
-    second: Evelyn_6
+      213: -4745417665800787830
+    second: inventory slot_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +54,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -93,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,155 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Evelyn_0
+      name: inventory slot_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 7
-        width: 44
-        height: 79
+        x: 263
+        y: 156
+        width: 498
+        height: 757
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ae43c2d501ffb9f0800000000000000
-      internalID: -450376430400614745
+      spriteID: e6f5445e6f7385730800000000000000
+      internalID: 3987999003584520046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_1
+      name: inventory slot_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 6
-        width: 41
-        height: 80
+        x: 255
+        y: 775
+        width: 7
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c66c05a6b4d973bf0800000000000000
-      internalID: -344633899238766996
+      spriteID: 7873a979c67aaa320800000000000000
+      internalID: 2570050622210062215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Evelyn_2
+      name: inventory slot_2
       rect:
         serializedVersion: 2
-        x: 119
-        y: 7
-        width: 41
-        height: 79
+        x: 255
+        y: 238
+        width: 7
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f3981ee7f5afd6790800000000000000
-      internalID: -7535091313463424705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_3
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 7
-        width: 41
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bced6d25062023c20800000000000000
-      internalID: 3184610499234291403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_4
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 6
-        width: 41
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3601d2a90b22b2320800000000000000
-      internalID: 2534157357222269027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_5
-      rect:
-        serializedVersion: 2
-        x: 267
-        y: 7
-        width: 44
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8109699451712880800000000000000
-      internalID: -8637498002154913394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Evelyn_6
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 7
-        width: 35
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d97fa74a4774b0c0800000000000000
-      internalID: -4560889361705502254
+      spriteID: a88a41776c3e42eb0800000000000000
+      internalID: -4745417665800787830
       vertices: []
       indices: 
       edges: []
@@ -275,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: beaf11216f0d46341a39c1d193f5a9ce
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Evelyn_0: -450376430400614745
-      Evelyn_1: -344633899238766996
-      Evelyn_2: -7535091313463424705
-      Evelyn_3: 3184610499234291403
-      Evelyn_4: 2534157357222269027
-      Evelyn_5: -8637498002154913394
-      Evelyn_6: -4560889361705502254
+      inventory slot_0: 3987999003584520046
+      inventory slot_1: 2570050622210062215
+      inventory slot_2: -4745417665800787830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -500,13 +500,13 @@ TextureImporter:
       name: Room_Furniture 1_16
       rect:
         serializedVersion: 2
-        x: 78
-        y: 299
-        width: 30
-        height: 25
+        x: 79
+        y: 300
+        width: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 2, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -525,7 +525,7 @@ TextureImporter:
         x: 131
         y: 270
         width: 26
-        height: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,6 +536,28 @@ TextureImporter:
       bones: []
       spriteID: 917bc32b70244ff4fba3c2072713557f
       internalID: -642060077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Furniture 1_18
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 200
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c47dd6f171e189469d5401eb827dc52
+      internalID: 467620963
       vertices: []
       indices: 
       edges: []
@@ -566,6 +588,7 @@ TextureImporter:
       Room_Furniture 1_15: 1254969602140494067
       Room_Furniture 1_16: 1964034565
       Room_Furniture 1_17: -642060077
+      Room_Furniture 1_18: 467620963
       Room_Furniture 1_2: -9032378496555209626
       Room_Furniture 1_3: 5541495058371053434
       Room_Furniture 1_4: -5101129734842119491

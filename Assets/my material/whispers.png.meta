@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ec07f96f3421c9e488ea50803a414ead
+guid: ea9a341f36f702d4dbe2eea94f402d16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6247066915208783547
-    second: key2_0
+      213: -826106604323677768
+    second: whispers_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: key2_0
+      name: whispers_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 11
-        height: 15
+        x: 18
+        y: 36
+        width: 1364
+        height: 1055
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54992ee2db5fd49a0800000000000000
-      internalID: -6247066915208783547
+      spriteID: 8b9dea69b641984f0800000000000000
+      internalID: -826106604323677768
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7caa46f63e4894b42a6dbd41adf0b4fa
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      key2_0: -6247066915208783547
+      whispers_0: -826106604323677768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 35dcafd6ac0d0494a86c3a9bbb8038ff
+guid: bb59d5edb2b74d8418fd0b6afd253f4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4164872193854688097
-    second: ChatGPT Image Jul 29, 2026, 02_46_59 PM_0
+      213: -4633382936648851899
+    second: Pixel Art Laptop Charger Trio_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatGPT Image Jul 29, 2026, 02_46_59 PM_0
+      name: Pixel Art Laptop Charger Trio_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 8
-        width: 979
-        height: 1011
+        x: 131
+        y: 147
+        width: 762
+        height: 749
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16b4c91a1399cc930800000000000000
-      internalID: 4164872193854688097
+      spriteID: 54e50b094cae2bfb0800000000000000
+      internalID: -4633382936648851899
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a5c667cc3d56dfc4fae1bbf789660b4a
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ChatGPT Image Jul 29, 2026, 02_46_59 PM_0: 4164872193854688097
+      Pixel Art Laptop Charger Trio_0: -4633382936648851899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
