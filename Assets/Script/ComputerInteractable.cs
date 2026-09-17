@@ -10,6 +10,9 @@ public class ComputerInteractable : Interactable
     public GameObject installPrompt;
     public GameObject computerImage;
 
+    [Header("ESC Hint")]
+    public GameObject inspectEscHint;
+
     [Header("Battery")]
     public string requiredItemName = "Computer Battery";
 
@@ -26,6 +29,17 @@ public class ComputerInteractable : Interactable
     public GameObject glitchFrame1;
     public GameObject glitchFrame2;
     public GameObject desktopPanel;
+
+    [Header("Computer Audio")]
+    public AudioSource audioSource;
+    public AudioClip glitchSound;
+    public AudioClip startupSound;
+
+    [Range(0f, 1f)]
+    public float glitchVolume = 0.3f;
+
+    [Range(0f, 1f)]
+    public float startupVolume = 0.4f;
 
     [Header("Glitch Dialogue")]
     [TextArea(2, 4)]
@@ -122,6 +136,9 @@ public class ComputerInteractable : Interactable
 
         computerInspectPanel.SetActive(true);
 
+        if (inspectEscHint != null)
+            inspectEscHint.SetActive(true);
+
         // Already booted -> desktop
         if (computerBooted)
         {
@@ -211,6 +228,14 @@ public class ComputerInteractable : Interactable
 
     private IEnumerator BootSequence()
     {
+        if (audioSource != null && glitchSound != null)
+        {
+            audioSource.PlayOneShot(
+                glitchSound,
+                glitchVolume
+            );
+        }
+
         // Hide everything first
         if (desktopPanel != null)
             desktopPanel.SetActive(false);
@@ -273,6 +298,14 @@ public class ComputerInteractable : Interactable
 
     private IEnumerator SecondGlitchSequence()
     {
+        if (audioSource != null && glitchSound != null)
+        {
+            audioSource.PlayOneShot(
+                glitchSound,
+                glitchVolume
+            );
+        }
+
         // Glitch 1 again
         if (bootScreen != null)
             bootScreen.SetActive(false);
@@ -314,6 +347,15 @@ public class ComputerInteractable : Interactable
     {
         computerBooted = true;
 
+        // Play startup sound only on the first successful boot
+        if (audioSource != null && startupSound != null)
+        {
+            audioSource.PlayOneShot(
+                startupSound,
+                startupVolume
+            );
+        }
+
         if (bootScreen != null)
             bootScreen.SetActive(false);
 
@@ -325,6 +367,9 @@ public class ComputerInteractable : Interactable
 
         if (desktopPanel != null)
             desktopPanel.SetActive(true);
+
+        if (inspectEscHint != null)
+            inspectEscHint.SetActive(false);
 
         bootCoroutine = null;
     }
@@ -342,6 +387,9 @@ public class ComputerInteractable : Interactable
 
         if (desktopPanel != null)
             desktopPanel.SetActive(true);
+
+        if (inspectEscHint != null)
+            inspectEscHint.SetActive(false);
 
         if (batteryImage != null)
             batteryImage.SetActive(true);

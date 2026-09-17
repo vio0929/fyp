@@ -4,6 +4,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 3f;
 
+    [Header("Movement Control")]
+    public bool canMove = true;
+
     [Header("Idle Sprites")]
     public Sprite idleDown;
     public Sprite idleUp;
@@ -25,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!canMove)
+        {
+            StopMovement();
+            return;
+        }
+
         float moveX = 0f;
         float moveY = 0f;
 
@@ -72,6 +81,28 @@ public class PlayerMovement : MonoBehaviour
 
             ShowIdleSprite();
         }
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+
+        if (!canMove)
+        {
+            StopMovement();
+        }
+    }
+
+
+    private void StopMovement()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isMoving", false);
+            animator.enabled = false;
+        }
+
+        ShowIdleSprite();
     }
 
     void ShowIdleSprite()

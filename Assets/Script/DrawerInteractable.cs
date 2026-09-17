@@ -16,6 +16,17 @@ public class DrawerInteractable : Interactable
     [Header("Diary")]
     public GameObject diaryObject;
 
+    [Header("Drawer Audio")]
+    public AudioSource audioSource;
+    public AudioClip lockedSound;
+    public AudioClip unlockSound;
+
+    [Range(0f, 1f)]
+    public float lockedVolume = 0.5f;
+
+    [Range(0f, 1f)]
+    public float unlockVolume = 0.5f;
+
     private bool isUnlocked = false;
 
 
@@ -38,6 +49,16 @@ public class DrawerInteractable : Interactable
         if (isUnlocked)
             return;
 
+        // Play locked sound
+        if (audioSource != null &&
+            lockedSound != null)
+        {
+            audioSource.PlayOneShot(
+                lockedSound,
+                lockedVolume
+            );
+        }
+
         // Show locked dialogue first
         DialogueManager.Instance.ShowDialogue(
             lockedDialogues,
@@ -49,6 +70,7 @@ public class DrawerInteractable : Interactable
     // =========================================================
     // Open Password
     // =========================================================
+
     private void OpenPasswordPanel()
     {
         PasswordManager.Instance.ShowPassword(
@@ -61,11 +83,22 @@ public class DrawerInteractable : Interactable
     // =========================================================
     // Correct Password
     // =========================================================
+
     private void UnlockDrawer()
     {
         isUnlocked = true;
 
         Debug.Log("Drawer unlocked!");
+
+        // Play unlock sound
+        if (audioSource != null &&
+            unlockSound != null)
+        {
+            audioSource.PlayOneShot(
+                unlockSound,
+                unlockVolume
+            );
+        }
 
         // Stop normal drawer interaction
         canInteract = false;
@@ -82,6 +115,7 @@ public class DrawerInteractable : Interactable
     // =========================================================
     // Show Diary
     // =========================================================
+
     private void ShowDiary()
     {
         if (diaryObject != null)
@@ -92,7 +126,9 @@ public class DrawerInteractable : Interactable
         }
         else
         {
-            Debug.LogWarning("Diary Object has not been assigned!");
+            Debug.LogWarning(
+                "Diary Object has not been assigned!"
+            );
         }
     }
 }

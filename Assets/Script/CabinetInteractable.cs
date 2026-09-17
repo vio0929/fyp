@@ -21,9 +21,21 @@ public class CabinetInteractable : Interactable
     [Header("Battery Item")]
     public Item batteryItem;
 
+    [Header("Cabinet Audio")]
+    public AudioSource audioSource;
+    public AudioClip lockedSound;
+    public AudioClip unlockSound;
+
+    [Range(0f, 1f)]
+    public float lockedVolume = 0.5f;
+
+    [Range(0f, 1f)]
+    public float unlockVolume = 0.5f;
+
     private bool isUnlocked = false;
     private bool waitingToCollect = false;
     private bool batteryCollected = false;
+
 
     private void Start()
     {
@@ -39,6 +51,7 @@ public class CabinetInteractable : Interactable
         }
     }
 
+
     private void Update()
     {
         // Player can only collect after dialogue is finished
@@ -48,6 +61,7 @@ public class CabinetInteractable : Interactable
             CollectBattery();
         }
     }
+
 
     public override void Interact()
     {
@@ -62,6 +76,16 @@ public class CabinetInteractable : Interactable
         if (isUnlocked)
             return;
 
+        // Play locked sound
+        if (audioSource != null &&
+            lockedSound != null)
+        {
+            audioSource.PlayOneShot(
+                lockedSound,
+                lockedVolume
+            );
+        }
+
         // Show locked dialogue first
         DialogueManager.Instance.ShowDialogue(
             lockedDialogues,
@@ -69,9 +93,11 @@ public class CabinetInteractable : Interactable
         );
     }
 
+
     // =========================================================
     // Open Password
     // =========================================================
+
     private void OpenPasswordPanel()
     {
         PasswordManager.Instance.ShowPassword(
@@ -80,26 +106,47 @@ public class CabinetInteractable : Interactable
         );
     }
 
+
     // =========================================================
     // Correct Password
     // =========================================================
+
     private void UnlockCabinet()
     {
         isUnlocked = true;
 
         Debug.Log("Cabinet unlocked!");
 
+        // Play unlock sound
+        if (audioSource != null &&
+            unlockSound != null)
+        {
+            audioSource.PlayOneShot(
+                unlockSound,
+                unlockVolume
+            );
+        }
+
         // Stop normal cabinet interaction
         canInteract = false;
 
         // Open cabinet close-up
-        cabinetInspectPanel.SetActive(true);
+        if (cabinetInspectPanel != null)
+        {
+            cabinetInspectPanel.SetActive(true);
+        }
 
         // Make sure battery is visible
-        batteryVisual.SetActive(true);
+        if (batteryVisual != null)
+        {
+            batteryVisual.SetActive(true);
+        }
 
         // Collect prompt stays hidden during dialogue
-        collectPrompt.SetActive(false);
+        if (collectPrompt != null)
+        {
+            collectPrompt.SetActive(false);
+        }
 
         waitingToCollect = false;
 
@@ -110,19 +157,26 @@ public class CabinetInteractable : Interactable
         );
     }
 
+
     // =========================================================
     // Dialogue Finished
     // =========================================================
+
     private void EnableCollect()
     {
         waitingToCollect = true;
 
-        collectPrompt.SetActive(true);
+        if (collectPrompt != null)
+        {
+            collectPrompt.SetActive(true);
+        }
     }
+
 
     // =========================================================
     // Collect Battery
     // =========================================================
+
     private void CollectBattery()
     {
         if (batteryCollected)
@@ -135,13 +189,22 @@ public class CabinetInteractable : Interactable
         InventoryManager.Instance.AddItem(batteryItem);
 
         // Remove battery from cabinet
-        batteryVisual.SetActive(false);
+        if (batteryVisual != null)
+        {
+            batteryVisual.SetActive(false);
+        }
 
         // Hide E Collect
-        collectPrompt.SetActive(false);
+        if (collectPrompt != null)
+        {
+            collectPrompt.SetActive(false);
+        }
 
         // Close cabinet close-up
-        cabinetInspectPanel.SetActive(false);
+        if (cabinetInspectPanel != null)
+        {
+            cabinetInspectPanel.SetActive(false);
+        }
 
         Debug.Log("Battery collected!");
     }

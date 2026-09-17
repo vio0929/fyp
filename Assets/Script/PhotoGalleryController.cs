@@ -10,6 +10,15 @@ public class PhotoGalleryController : MonoBehaviour
     [Header("Photo Viewer")]
     public Image enlargedPhoto;
 
+    private bool canClosePhoto = false;
+
+    private bool photo1Viewed = false;
+    private bool photo2Viewed = false;
+    private bool photo3Viewed = false;
+    private bool photo4Viewed = false;
+    private bool photo5Viewed = false;
+    private bool photo6Viewed = false;
+
     // =====================================================
     // PHOTO 1 - Evelyn & Lucia
     // =====================================================
@@ -106,32 +115,56 @@ public class PhotoGalleryController : MonoBehaviour
 
     public void OpenPhoto1()
     {
-        OpenPhoto(photo1Sprite, photo1Dialogues);
+        OpenPhoto(
+            photo1Sprite,
+            photo1Dialogues,
+            ref photo1Viewed
+        );
     }
 
     public void OpenPhoto2()
     {
-        OpenPhoto(photo2Sprite, photo2Dialogues);
+        OpenPhoto(
+            photo2Sprite,
+            photo2Dialogues,
+            ref photo2Viewed
+        );
     }
 
     public void OpenPhoto3()
     {
-        OpenPhoto(photo3Sprite, photo3Dialogues);
+        OpenPhoto(
+            photo3Sprite,
+            photo3Dialogues,
+            ref photo3Viewed
+        );
     }
 
     public void OpenPhoto4()
     {
-        OpenPhoto(photo4Sprite, photo4Dialogues);
+        OpenPhoto(
+            photo4Sprite,
+            photo4Dialogues,
+            ref photo4Viewed
+        );
     }
 
     public void OpenPhoto5()
     {
-        OpenPhoto(photo5Sprite, photo5Dialogues);
+        OpenPhoto(
+            photo5Sprite,
+            photo5Dialogues,
+            ref photo5Viewed
+        );
     }
 
     public void OpenPhoto6()
     {
-        OpenPhoto(photo6Sprite, photo6Dialogues);
+        OpenPhoto(
+            photo6Sprite,
+            photo6Dialogues,
+            ref photo6Viewed
+        );
     }
 
 
@@ -139,7 +172,7 @@ public class PhotoGalleryController : MonoBehaviour
     // GENERAL PHOTO VIEWER
     // =====================================================
 
-    private void OpenPhoto(Sprite photo, string[] dialogues)
+    private void OpenPhoto(Sprite photo,string[] dialogues,ref bool hasViewed)
     {
         // Safety check
         if (photo == null)
@@ -167,15 +200,36 @@ public class PhotoGalleryController : MonoBehaviour
             photoViewerPanel.SetActive(true);
         }
 
-        // Show Evelyn's internal dialogue
-        if (DialogueManager.Instance != null &&
+        // First time viewing this photo
+        if (!hasViewed &&
+            DialogueManager.Instance != null &&
             dialogues != null &&
             dialogues.Length > 0)
         {
-            DialogueManager.Instance.ShowDialogue(dialogues);
+            canClosePhoto = false;
+
+            // Mark this photo as viewed
+            hasViewed = true;
+
+            DialogueManager.Instance.ShowDialogue(
+                dialogues,
+                EnablePhotoClose
+            );
+        }
+        else
+        {
+            // Already viewed before
+            // No dialogue, can close immediately
+            canClosePhoto = true;
         }
     }
 
+    private void EnablePhotoClose()
+    {
+        canClosePhoto = true;
+
+        Debug.Log("Photo dialogue finished. Back enabled!");
+    }
 
     // =====================================================
     // BACK TO PHOTO GALLERY
@@ -183,6 +237,12 @@ public class PhotoGalleryController : MonoBehaviour
 
     public void ClosePhoto()
     {
+        if (!canClosePhoto)
+        {
+            Debug.Log("Finish reading the dialogue first!");
+            return;
+        }
+
         // Hide enlarged photo viewer
         if (photoViewerPanel != null)
         {

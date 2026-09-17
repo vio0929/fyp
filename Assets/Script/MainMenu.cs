@@ -10,6 +10,9 @@ public class MainMenu : MonoBehaviour
     [Header("Fade Settings")]
     public float fadeDuration = 1f;
 
+    [Header("Main Menu BGM")]
+    public AudioSource bgmSource;
+
     private bool isTransitioning = false;
 
 
@@ -38,6 +41,13 @@ public class MainMenu : MonoBehaviour
     {
         isTransitioning = true;
 
+        float startVolume = 0f;
+
+        if (bgmSource != null)
+        {
+            startVolume = bgmSource.volume;
+        }
+
         if (fadePanel != null)
         {
             // Stop player from clicking anything during transition
@@ -55,10 +65,24 @@ public class MainMenu : MonoBehaviour
                     elapsedTime / fadeDuration
                 );
 
+                if (bgmSource != null)
+                {
+                    bgmSource.volume = Mathf.Lerp(
+                        startVolume,
+                        0f,
+                        elapsedTime / fadeDuration
+                    );
+                }
+
                 yield return null;
             }
 
             fadePanel.alpha = 1f;
+        }
+
+        if (bgmSource != null)
+        {
+            bgmSource.volume = 0f;
         }
 
         // Small pause while screen is completely black

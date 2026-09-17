@@ -10,17 +10,33 @@ public class MedicalRecordController : MonoBehaviour
     public string choiceQuestion =
         "This is private. Should I really read it?";
 
+    [Header("Medical Record Audio")]
+    public AudioSource audioSource;
+    public AudioClip readSound;
+
+    [Range(0f, 1f)]
+    public float readSoundVolume = 0.3f;
+
     [Header("Medical Record State")]
     [SerializeField]
     private bool hasReadMedicalRecord = false;
 
+    [SerializeField]
+    private bool hasShownReaction = false;
+
+    [Header("Evelyn Reaction")]
+    [TextArea(2, 4)]
+    public string[] reactionDialogue;
+
+
     // =========================================================
     // Called when player clicks the Medical Record icon
     // =========================================================
+
     public void TryOpenMedicalRecord()
     {
-        // If the player has already read the record,
-        // open it directly without showing the choice again.
+        // Already read before:
+        // open directly without choice/corruption.
         if (hasReadMedicalRecord)
         {
             OpenMedicalRecord();
@@ -33,8 +49,8 @@ public class MedicalRecordController : MonoBehaviour
             return;
         }
 
-        // If the player has never read it before,
-        // show the choice.
+        // First time:
+        // ask whether Evelyn wants to read it.
         if (ChoiceManager.Instance != null)
         {
             ChoiceManager.Instance.ShowChoice(
@@ -51,16 +67,28 @@ public class MedicalRecordController : MonoBehaviour
         }
     }
 
+
     // =========================================================
     // Player chooses "Read it"
     // =========================================================
+
     private void ReadMedicalRecord()
     {
-        // Only add corruption the FIRST time.
         if (!hasReadMedicalRecord)
         {
             hasReadMedicalRecord = true;
 
+            // Revelation sound.
+            if (audioSource != null &&
+                readSound != null)
+            {
+                audioSource.PlayOneShot(
+                    readSound,
+                    readSoundVolume
+                );
+            }
+
+            // First-time corruption consequence.
             if (CorruptionManager.Instance != null)
             {
                 CorruptionManager.Instance.AddCorruption(10);
@@ -77,17 +105,18 @@ public class MedicalRecordController : MonoBehaviour
             );
         }
 
-        // Open the medical record after choosing Read.
         OpenMedicalRecord();
     }
+
 
     // =========================================================
     // Player chooses "Leave it"
     // =========================================================
+
     private void LeaveMedicalRecord()
     {
-        // Do NOT mark the record as read.
-        // The player can come back and choose again later.
+        // Do NOT mark it as read.
+        // Player can return and make the choice again.
 
         Debug.Log(
             "Player chose not to read the medical record. " +
@@ -95,9 +124,11 @@ public class MedicalRecordController : MonoBehaviour
         );
     }
 
+
     // =========================================================
-    // Open Medical Record Panel
+    // Open Medical Record
     // =========================================================
+
     private void OpenMedicalRecord()
     {
         if (medicalRecordPanel != null)
@@ -112,14 +143,36 @@ public class MedicalRecordController : MonoBehaviour
         }
     }
 
+
     // =========================================================
-    // Close Medical Record Panel
+    // Close Medical Record
     // =========================================================
+
     public void CloseMedicalRecord()
     {
         if (medicalRecordPanel != null)
         {
             medicalRecordPanel.SetActive(false);
+        }
+
+        // Only show Evelyn's reaction once,
+        // after she has actually chosen to read the record.
+        if (hasReadMedicalRecord && !hasShownReaction)
+        {
+            hasShownReaction = true;
+
+            if (DialogueManager.Instance != null)
+            {
+                DialogueManager.Instance.ShowDialogue(
+                    reactionDialogue
+                );
+            }
+            else
+            {
+                Debug.LogWarning(
+                    "DialogueManager Instance was not found!"
+                );
+            }
         }
     }
 }

@@ -9,6 +9,32 @@ public class OpeningCutscene : MonoBehaviour
     [Header("Opening Text")]
     public TMP_Text openingText;
 
+    [Header("Opening Audio")]
+    public AudioSource audioSource;
+
+    public AudioClip whispersSound;
+    public AudioClip typingSound;
+    public AudioClip glitchSound;
+    public AudioClip finalGlitchSound;
+    public AudioClip finalBeepSound;
+
+    [Range(0f, 1f)]
+    public float whispersVolume = 0.08f;
+
+    [Range(0f, 1f)]
+    public float typingVolume = 0.3f;
+
+    [Range(0f, 1f)]
+    public float glitchVolume = 0.3f;
+
+    [Range(0f, 1f)]
+    public float beepVolume = 0.35f;
+
+    [Header("User Manual")]
+    public CanvasGroup userManualPanel;
+    public float userManualDuration = 3.5f;
+    public float userManualFadeDuration = 0.6f;
+
     [Header("Normal Opening Timing")]
     public float fadeDuration = 1f;
     public float textStayDuration = 1.8f;
@@ -19,7 +45,7 @@ public class OpeningCutscene : MonoBehaviour
     public float finalBlackPause = 2.5f;
 
     [Header("Final Glitch")]
-    public float finalGlitchDuration = 4.5f;
+    public float finalGlitchDuration = 5.5f;
 
     [Header("Promise Wall")]
     public int promiseRows = 9;
@@ -81,9 +107,53 @@ public class OpeningCutscene : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(PlayOpening());
+        StartCoroutine(StartOpeningSequence());
     }
 
+    private IEnumerator StartOpeningSequence()
+    {
+        // Hide opening nightmare text first
+        SetTextAlpha(0f);
+
+        // Show User Manual
+        if (userManualPanel != null)
+        {
+            userManualPanel.alpha = 1f;
+
+            yield return new WaitForSeconds(
+                userManualDuration
+            );
+
+            // Fade User Manual out
+            float elapsedTime = 0f;
+
+            while (elapsedTime < userManualFadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+
+                userManualPanel.alpha =
+                    Mathf.Lerp(
+                        1f,
+                        0f,
+                        elapsedTime / userManualFadeDuration
+                    );
+
+                yield return null;
+            }
+
+            userManualPanel.alpha = 0f;
+
+            userManualPanel.gameObject.SetActive(false);
+        }
+
+        // Short black pause
+        yield return new WaitForSeconds(0.4f);
+
+        // Start the original nightmare
+        yield return StartCoroutine(
+            PlayOpening()
+        );
+    }
 
     // =========================================================
     // MAIN OPENING
@@ -104,6 +174,16 @@ public class OpeningCutscene : MonoBehaviour
         // NORMAL NIGHTMARE
         // -----------------------------------------------------
 
+        // Start distant whispers
+        if (audioSource != null &&
+            whispersSound != null)
+        {
+            audioSource.clip = whispersSound;
+            audioSource.volume = whispersVolume;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+
         yield return StartCoroutine(
             ShowNormalLine("Evelyn...")
         );
@@ -120,6 +200,15 @@ public class OpeningCutscene : MonoBehaviour
         // -----------------------------------------------------
         // FIRST CLEAR "YOU PROMISED."
         // -----------------------------------------------------
+
+        if (audioSource != null &&
+             typingSound != null)
+        {
+            audioSource.PlayOneShot(
+                typingSound,
+                typingVolume
+            );
+        }
 
         openingText.text = "YOU PROMISED.";
 
@@ -152,6 +241,24 @@ public class OpeningCutscene : MonoBehaviour
         // 2 - 3 voices
         // =====================================================
 
+        // Stop whispers suddenly
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+            audioSource.loop = false;
+            audioSource.volume = 1f;
+        }
+
+        // Glitch static
+        if (audioSource != null &&
+            glitchSound != null)
+        {
+            audioSource.PlayOneShot(
+                glitchSound,
+                glitchVolume
+            );
+        }
+
         CreateGlitchWave(
             Random.Range(2, 4),
             1
@@ -171,6 +278,15 @@ public class OpeningCutscene : MonoBehaviour
         // 6 - 8 voices
         // =====================================================
 
+        if (audioSource != null &&
+               glitchSound != null)
+        {
+            audioSource.PlayOneShot(
+                glitchSound,
+                glitchVolume
+            );
+        }
+
         CreateGlitchWave(
             Random.Range(6, 9),
             2
@@ -189,9 +305,24 @@ public class OpeningCutscene : MonoBehaviour
         // GLITCH 3
         // =====================================================
 
+        if (audioSource != null)
+        {
+            AudioClip clipToPlay = finalGlitchSound != null
+                ? finalGlitchSound
+                : glitchSound;
+
+            if (clipToPlay != null)
+            {
+                audioSource.PlayOneShot(
+                    clipToPlay,
+                    glitchVolume
+                );
+            }
+        }
+
         yield return StartCoroutine(
-    FinalGlitch()
-);
+            FinalGlitch()
+        );
 
         // =====================================================
         // RANDOM CHAOS SUDDENLY DISAPPEARS
@@ -209,10 +340,24 @@ public class OpeningCutscene : MonoBehaviour
         // PERFECTLY ORDERED "YOU PROMISED." WALL
         // =====================================================
 
+        if (audioSource != null &&
+    finalBeepSound != null)
+        {
+            audioSource.PlayOneShot(
+                finalBeepSound,
+                beepVolume
+            );
+        }
+
         yield return StartCoroutine(
-            ShowPromiseWall()
+             ShowPromiseWall()
         );
 
+        // Stop beep before the black screen / white flash
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
 
         // =====================================================
         // PURE BLACK
@@ -542,110 +687,94 @@ public class OpeningCutscene : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        while (
-            elapsedTime < finalGlitchDuration
-        )
+        while (elapsedTime < finalGlitchDuration)
         {
-            float progress =
-                elapsedTime /
-                finalGlitchDuration;
+            float progress = elapsedTime / finalGlitchDuration;
 
-            string line;
-
-            bool strongPromise = false;
-
-
-            // -------------------------------------------------
-            // FIRST HALF
-            // Different voices fight each other
-            // -------------------------------------------------
-
-            if (progress < 0.50f)
-            {
-                line =
-                    glitchLines[
-                        Random.Range(
-                            0,
-                            glitchLines.Length
-                        )
-                    ];
-            }
-
-
-            // -------------------------------------------------
-            // SECOND HALF
-            // YOU PROMISED begins taking over
-            // -------------------------------------------------
-
-            else
-            {
-                if (Random.value < 0.60f)
-                {
-                    line = "YOU PROMISED.";
-                    strongPromise = true;
-                }
-                else
-                {
-                    line =
-                        whiteGlitchLines[
-                            Random.Range(
-                                0,
-                                whiteGlitchLines.Length
-                            )
-                        ];
-                }
-            }
-
-
-            CreateRandomGlitchText(
-                line,
-                strongPromise
-            );
-
-
-            // -------------------------------------------------
-            // SPEED GETS FASTER
-            // -------------------------------------------------
-
+            // The closer we get to the end, the more text appears at once.
+            int minBatch;
+            int maxBatch;
             float spawnInterval;
+            float promiseChance;
 
             if (progress < 0.35f)
             {
-                spawnInterval = 0.23f;
+                minBatch = 2;
+                maxBatch = 4;      // 2 - 3 texts
+                spawnInterval = 0.20f;
+                promiseChance = 0.20f;
             }
             else if (progress < 0.70f)
             {
-                spawnInterval = 0.14f;
+                minBatch = 3;
+                maxBatch = 6;      // 3 - 5 texts
+                spawnInterval = 0.12f;
+                promiseChance = 0.40f;
             }
             else
             {
-                spawnInterval = 0.075f;
+                minBatch = 5;
+                maxBatch = 9;      // 5 - 8 texts
+                spawnInterval = 0.065f;
+                promiseChance = 0.68f;
             }
 
+            int amount = Random.Range(minBatch, maxBatch);
 
-            yield return new WaitForSeconds(
-                spawnInterval
-            );
+            for (int i = 0; i < amount; i++)
+            {
+                string line;
+                bool strongPromise = false;
 
-            elapsedTime +=
-                spawnInterval;
+                // Near the end, YOU PROMISED increasingly takes over,
+                // but white voices remain mixed in.
+                if (Random.value < promiseChance)
+                {
+                    line = "YOU PROMISED.";
+                    strongPromise = progress >= 0.55f;
+                }
+                else
+                {
+                    // Keep a visible amount of white text in the chaos.
+                    if (progress >= 0.50f && Random.value < 0.65f)
+                    {
+                        line = whiteGlitchLines[
+                            Random.Range(0, whiteGlitchLines.Length)
+                        ];
+                    }
+                    else
+                    {
+                        line = glitchLines[
+                            Random.Range(0, glitchLines.Length)
+                        ];
+                    }
+                }
+
+                CreateRandomGlitchText(
+                    line,
+                    strongPromise
+                );
+            }
+
+            yield return new WaitForSeconds(spawnInterval);
+            elapsedTime += spawnInterval;
         }
 
 
         // =====================================================
-        // RED YOU PROMISED TAKEOVER
+        // FINAL RED + WHITE TAKEOVER
+        // Exactly 40 extra texts. Mostly red, but enough white
+        // remains so the screen does not become one flat colour.
         // =====================================================
 
-        for (int i = 0; i < 18; i++)
+        for (int i = 0; i < 40; i++)
         {
-            if (i % 3 == 0)
+            // About 35% white / 65% red.
+            if (Random.value < 0.35f)
             {
                 string whiteLine =
                     whiteGlitchLines[
-                        Random.Range(
-                            0,
-                            whiteGlitchLines.Length
-                        )
+                        Random.Range(0, whiteGlitchLines.Length)
                     ];
 
                 CreateRandomGlitchText(
@@ -661,7 +790,7 @@ public class OpeningCutscene : MonoBehaviour
                 );
             }
 
-            yield return new WaitForSeconds(0.045f);
+            yield return new WaitForSeconds(0.025f);
         }
 
 
@@ -676,34 +805,23 @@ public class OpeningCutscene : MonoBehaviour
             );
 
         finalPromise.gameObject.SetActive(true);
+        finalPromise.text = "YOU PROMISED.";
 
-        finalPromise.text =
-            "YOU PROMISED.";
-
-        finalPromise.rectTransform
-            .anchoredPosition =
+        finalPromise.rectTransform.anchoredPosition =
             Vector2.zero;
 
-        finalPromise.rectTransform
-            .localRotation =
+        finalPromise.rectTransform.localRotation =
             Quaternion.identity;
 
-        finalPromise.rectTransform
-            .localScale =
+        finalPromise.rectTransform.localScale =
             Vector3.one * 1.25f;
 
-        finalPromise.color =
-            strongGuiltColor;
+        finalPromise.color = strongGuiltColor;
 
-        glitchTexts.Add(
-            finalPromise
-        );
+        glitchTexts.Add(finalPromise);
 
-
-        // Hold the final accusation
-        yield return new WaitForSeconds(
-            0.65f
-        );
+        // Hold the final accusation slightly longer.
+        yield return new WaitForSeconds(0.8f);
     }
 
     private IEnumerator ShowPromiseWall()

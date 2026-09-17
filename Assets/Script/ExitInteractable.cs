@@ -13,6 +13,17 @@ public class ExitDoorInteractable : Interactable
     [Header("Exit Blocker")]
     public Collider2D physicalBlocker;
 
+    [Header("Door Audio")]
+    public AudioSource audioSource;
+    public AudioClip lockedSound;
+    public AudioClip unlockSound;
+
+    [Range(0f, 1f)]
+    public float lockedVolume = 0.5f;
+
+    [Range(0f, 1f)]
+    public float unlockVolume = 0.5f;
+
     private bool isUnlocked = false;
 
 
@@ -21,21 +32,33 @@ public class ExitDoorInteractable : Interactable
         if (!canInteract)
             return;
 
-        // If already unlocked
+        // Door is already unlocked.
+        // Do nothing so the dialogue does not repeat.
         if (isUnlocked)
         {
-            DialogueManager.Instance.ShowDialogue(unlockedDialogues);
             return;
         }
 
-        // Check if Evelyn has the key
+        // Check if Evelyn has the key.
         if (InventoryManager.Instance.HasItem("Key"))
         {
             UnlockExit();
         }
         else
         {
-            DialogueManager.Instance.ShowDialogue(lockedDialogues);
+            // Locked sound.
+            if (audioSource != null && lockedSound != null)
+            {
+                audioSource.PlayOneShot(
+                    lockedSound,
+                    lockedVolume
+                );
+            }
+
+            // Locked dialogue.
+            DialogueManager.Instance.ShowDialogue(
+                lockedDialogues
+            );
         }
     }
 
@@ -44,22 +67,35 @@ public class ExitDoorInteractable : Interactable
     {
         isUnlocked = true;
 
-        // Remove key from inventory
+        // Play unlock sound.
+        if (audioSource != null && unlockSound != null)
+        {
+            audioSource.PlayOneShot(
+                unlockSound,
+                unlockVolume
+            );
+        }
+
+        // Remove key from inventory.
         InventoryManager.Instance.RemoveItem("Key");
 
-        // Remove the invisible wall
+        // Remove the invisible wall.
         if (physicalBlocker != null)
         {
             physicalBlocker.enabled = false;
         }
         else
         {
-            Debug.LogWarning("Physical Blocker has not been assigned!");
+            Debug.LogWarning(
+                "Physical Blocker has not been assigned!"
+            );
         }
 
         Debug.Log("Exit unlocked!");
 
-        // Evelyn reacts
-        DialogueManager.Instance.ShowDialogue(unlockedDialogues);
+        // Evelyn reacts only once when the door is unlocked.
+        DialogueManager.Instance.ShowDialogue(
+            unlockedDialogues
+        );
     }
 }
